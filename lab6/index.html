@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <style>
+        .error{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form id="StudentForm">
+        <label for="studentID">Student id :</label>
+        <input type="text" id="studentID" name="studentID"><br><br>
+
+        <label for="studentName">Student NAME :</label>
+        <input type="text" id="studentName" name="studentName"><br><br>
+
+        <label for="studentAge">Student Age :</label>
+        <input type="text" id="studentAge" name="studentAge"><br><br> 
+        <button type="submit" >Add Student</button>       
+    </form>
+    <h2>Student Records</h2>
+    <div id="error" class="error"></div>
+    <ul id="studentList"></ul>
+    <script>
+        const StudentForm=document.getElementById('StudentForm');
+        const studentList=document.getElementById('studentList');
+        const errorDiv=document.getElementById('error');
+        const students=[];
+
+        StudentForm.addEventListener('submit',function(event){
+            event.preventDefault();
+            const studentID=document.getElementById('studentID').value;
+            const studentName=document.getElementById('studentName').value;
+            const studentAge=document.getElementById('studentAge').value;
+            try{
+                addStudent(studentID,studentName,studentAge);
+                displayStudent();
+                errorDiv.textContent='';
+            }
+            catch(error){
+                errorDiv.textContent=error.message;
+
+            }
+            StudentForm.reset();
+
+        });
+        function addStudent(id,name,age){
+            if(!id||!name||!age){
+                throw new Error("all fields are required");
+            }
+            if(isNaN(age)||age<=0){
+                throw new Error("age must be positive");
+            }
+        const StudentExist=students.some(students=>students.id==id);
+        if(StudentExist){
+            throw new Error("student id alrewady exists");
+        }
+        const student={
+            id,
+            name,
+            age:parseInt(age,10)
+        };
+        students.push(student);
+        }
+        function displayStudent(){
+            studentList.innerHTML='';
+            students.forEach(students=>{
+                const li=document.createElement('li');
+                li.textContent=`ID:${students.id},Name : ${students.name},Age : ${students.age}`;
+                studentList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

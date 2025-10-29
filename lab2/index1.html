@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            /* display: flex; */
+            margin: 10px;
+            padding: 10px;
+            overflow: hidden;
+        }
+        .Scroll{
+            animation: ScrollText 5s linear infinite;
+            white-space: nowrap;
+
+        }
+        .Blink{
+            animation: BlinkText 1s alternate infinite;
+        }
+        @keyframes ScrollText{
+            0%{
+                transform: translateX(100%);
+            }
+            100%{
+                transform: translateX(-100%);
+            }
+        }
+        @keyframes BlinkText{
+            0%,100%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="Scroll">
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
+    <div class="Blink">
+        <p>
+            Lorem ipsum dolor sit amet consectetur
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet.
+        </p>
+    </div>
+</body>
+</html>

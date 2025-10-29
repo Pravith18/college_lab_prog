@@ -1,0 +1,5 @@
+
+sum:12,
+substraction:8,
+multiplication:20,
+division:5

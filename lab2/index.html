@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css animation</title>
+    <style>
+body{
+    background-color: antiquewhite;
+    margin: 5vh;
+    padding: 10px;
+    overflow: hidden;
+}
+.ScrollText{
+white-space: nowrap;
+animation: ScrollText1 10s linear infinite;
+}
+
+.blinkingText{
+    animation: blinkText 1s alternate infinite;
+
+}
+@keyframes ScrollText1{
+0%{
+    transform: translateX(100%);
+}
+100%{
+    transform: translateX(-100%);
+}
+}
+@keyframes blinkText{
+    0%,100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="ScrollText">
+        <p>this is a scrollable text that scrolls from left to right</p>
+    </div>
+    <div class="blinkingText">
+        <p> this is blinking text that blinks at a regular interval</p>
+        <p>shows result at a new line</p>
+    </div>
+</body>
+</html>

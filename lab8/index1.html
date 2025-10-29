@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <style>
+        .error{
+            color: red;
+            font-weight: 900;
+        }
+        .valid{
+            color: green;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form id="myform">
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email"><br>
+        <span id="emailFeedback" class="error"></span>
+        <br><br>
+
+        <label for="password">Password :</label>
+        <input type="password" id="password" name="password"><br>
+        <span id="passwordFeedback" class="error"></span>
+        <br><br>
+
+        <label for="user">userID :</label>
+        <input type="text" id="user" name="user"><br>
+        <span id="userFeedback" class="error"></span>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script src="script1.js"></script>
+</body>
+</html>

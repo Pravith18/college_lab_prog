@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nitte</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            margin: 2px;
+            padding: 5px;
+        }
+        header{
+            background-color: grey;
+            padding: 9px;
+            display: flex;
+            align-items: center;
+        }
+        .logo{
+            width: 90px;
+            padding: 0 10px;
+            border: 2px solid black;
+        }
+        .college-info{
+            padding: 0 10px;
+        }
+        .college-info p{
+            padding: 0px;
+            margin: 0px;
+        }
+        .college-info h1{
+            margin: 0px;
+        }
+        nav{
+            background-color: rgb(180, 180, 180);
+        }
+        .menu{
+            display: flex;
+            list-style: none;
+            /* justify-content: center; */
+            padding: 1rem 0;
+            margin: 0px;
+        }
+        .menu li{
+            margin: 0 1rem;
+        }
+        .menu a{
+            color: black;
+        }
+        .submenu{
+            display: none;
+            position: absolute;
+            background-color: grey;
+        }
+        .dropdown:hover .submenu{
+            display: block;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <img src="nitte.png" alt="nitte">
+        </div>
+        <div class="college-info">
+            <h1>NMAM insititute of technology</h1>
+            <p>affiliation NMAMIT NITTE</p>
+            <p>Address : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum, culpa.</p>
+        </div>
+    </header>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about">ABOUT</a></li>
+            <li class="dropdown">
+                <a href="s">Department</a>
+                <ul class="submenu">
+                    <a href="1">computer science</a><br>
+                    <a href="1">is</a><br>
+                    <a href="1">aids</a>
+                </ul>
+            </li>
+            <li><a href="fddf">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
