@@ -15,7 +15,7 @@ const userAction = (action,name)=>{
 
 const simulateUserAction =()=>{
     userAction('greet','Pravith');
-    userAction('farewell','Preksha');
+    userAction('farewell','Prasoon');
 };
 
 module.exports=simulateUserAction;
